@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QR_Concept" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kpa-OW-Dpo" customClass="videoPreview">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.78292632102966309" green="0.75608903169631958" blue="0.9395483136177063" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kpa-OW-Dpo" secondAttribute="trailing" id="5HQ-7J-Gai"/>
+                            <constraint firstItem="kpa-OW-Dpo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="BKp-ee-qqh"/>
+                            <constraint firstItem="kpa-OW-Dpo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G0I-68-zlA"/>
+                            <constraint firstAttribute="bottom" secondItem="kpa-OW-Dpo" secondAttribute="bottom" id="qFh-Eq-x9v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="viewPreview" destination="kpa-OW-Dpo" id="pux-UF-ufW"/>
+                        <segue destination="BE8-29-qcH" kind="show" identifier="showQRDetails" id="0Y7-cz-1RM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.00492610837438"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="ShX-21-y4d">
+            <objects>
+                <viewController id="BE8-29-qcH" customClass="DetailsViewController" customModule="QR_Concept" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wtZ-lD-CfS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SI2-2H-Vsm">
+                                <rect key="frame" x="16" y="617" width="343" height="30"/>
+                                <color key="backgroundColor" red="0.065612442006213079" green="0.5712486527196392" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="b8c-oC-QTY"/>
+                                </constraints>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="e8F-hU-0wJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn5-PU-qUw">
+                                <rect key="frame" x="16" y="20" width="343" height="589"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SI2-2H-Vsm" firstAttribute="top" secondItem="Pn5-PU-qUw" secondAttribute="bottom" constant="8" id="F4E-eU-y0J"/>
+                            <constraint firstItem="SI2-2H-Vsm" firstAttribute="leading" secondItem="KZI-AN-1dO" secondAttribute="leading" constant="16" id="FlH-24-b7u"/>
+                            <constraint firstItem="KZI-AN-1dO" firstAttribute="bottom" secondItem="SI2-2H-Vsm" secondAttribute="bottom" constant="20" id="KlB-wZ-EGc"/>
+                            <constraint firstItem="KZI-AN-1dO" firstAttribute="trailing" secondItem="Pn5-PU-qUw" secondAttribute="trailing" constant="16" id="OEa-u6-cfU"/>
+                            <constraint firstItem="KZI-AN-1dO" firstAttribute="trailing" secondItem="SI2-2H-Vsm" secondAttribute="trailing" constant="16" id="TB6-IV-bni"/>
+                            <constraint firstItem="SI2-2H-Vsm" firstAttribute="top" secondItem="Pn5-PU-qUw" secondAttribute="bottom" constant="8" id="eag-kd-d5V"/>
+                            <constraint firstItem="Pn5-PU-qUw" firstAttribute="leading" secondItem="KZI-AN-1dO" secondAttribute="leading" constant="16" id="lNd-Ph-ZHa"/>
+                            <constraint firstItem="KZI-AN-1dO" firstAttribute="bottom" secondItem="SI2-2H-Vsm" secondAttribute="bottom" constant="20" id="oVs-vL-sFM"/>
+                            <constraint firstItem="Pn5-PU-qUw" firstAttribute="top" secondItem="KZI-AN-1dO" secondAttribute="top" id="tU0-ik-Jda"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KZI-AN-1dO"/>
+                    </view>
+                    <connections>
+                        <outlet property="QRDetails" destination="Pn5-PU-qUw" id="SRQ-Q0-EqD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mei-h0-hgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="912.79999999999995" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
